@@ -16,17 +16,20 @@ Module AccumulateMessages
         Dim storage As String
         Dim endLoop As Boolean
 
-
+        MsgBox("*Type a message to store for later.
+*Type C to clear stored messages.
+*Type #display to see stored messages.
+*Type Q to terminate program.")
 
         Do While endLoop = False
-
+            Console.WriteLine("Type a message here.")
+            newMessage = Console.ReadLine()
             If newMessage = "q" Then
                 endLoop = True
+            ElseIf newMessage = "#display" Then
+                MsgBox(UserMessages(newMessage, clear, storage))
             Else
-                Console.WriteLine("Type a message here. Press C to clear stored messages. Press Q to terminate program")
-                newMessage = Console.ReadLine()
                 UserMessages(newMessage, clear, storage)
-                Console.WriteLine(UserMessages(newMessage, clear, storage))
                 storage = UserMessages(newMessage, clear, storage)
             End If
         Loop
@@ -40,6 +43,8 @@ Module AccumulateMessages
 
         If newMessage = "C" Then
             functionStorage = ""
+        ElseIf newMessage = "#display" Then
+            functionStorage = storage
         End If
 
         Return functionStorage
