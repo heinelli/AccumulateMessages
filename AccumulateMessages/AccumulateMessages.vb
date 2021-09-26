@@ -28,6 +28,8 @@ Module AccumulateMessages
                 endLoop = True
             ElseIf newMessage = "#display" Then
                 MsgBox(UserMessages(newMessage, clearMessages, storage))
+            ElseIf newMessage = "C" Then
+                Console.WriteLine("MESSAGES ERASED")
             Else
                 UserMessages(newMessage, clearMessages, storage)
                 storage = UserMessages(newMessage, clearMessages, storage)
