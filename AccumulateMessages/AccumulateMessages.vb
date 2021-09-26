@@ -9,13 +9,13 @@ Option Strict On
 Option Compare Text
 
 Module AccumulateMessages
-
     Sub Main()
         Dim newMessage As String
-        Dim clear As Boolean = False
+        Dim clearMessages As Boolean = False
         Dim storage As String
         Dim endLoop As Boolean
 
+        'Display instructions for user.
         MsgBox("*Type a message to store for later.
 *Type C to clear stored messages.
 *Type #display to see stored messages.
@@ -27,28 +27,23 @@ Module AccumulateMessages
             If newMessage = "q" Then
                 endLoop = True
             ElseIf newMessage = "#display" Then
-                MsgBox(UserMessages(newMessage, clear, storage))
+                MsgBox(UserMessages(newMessage, clearMessages, storage))
             Else
-                UserMessages(newMessage, clear, storage)
-                storage = UserMessages(newMessage, clear, storage)
+                UserMessages(newMessage, clearMessages, storage)
+                storage = UserMessages(newMessage, clearMessages, storage)
             End If
         Loop
-
-
     End Sub
 
     Function UserMessages(ByVal newMessage As String, ByVal clear As Boolean, ByVal storage As String) As String
 
+        'Each string is added to previous string with carriage return
         Dim functionStorage As String = newMessage + vbNewLine + storage
-
         If newMessage = "C" Then
             functionStorage = ""
         ElseIf newMessage = "#display" Then
             functionStorage = storage
         End If
-
         Return functionStorage
     End Function
-
-
 End Module
