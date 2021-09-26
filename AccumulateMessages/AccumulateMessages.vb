@@ -21,6 +21,7 @@ Module AccumulateMessages
 *Type #display to see stored messages.
 *Type Q to terminate program.")
 
+        'Request user input. Erase or view messages. End program.
         Do While endLoop = False
             Console.WriteLine("Type a message here.")
             newMessage = Console.ReadLine()
