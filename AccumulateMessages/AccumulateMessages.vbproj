@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4B9279B3-7DFA-4892-8D1D-E100AC63C9F6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>AccumulateMessages.Module1</StartupObject>
+    <StartupObject>AccumulateMessages.AccumulateMessages</StartupObject>
     <RootNamespace>AccumulateMessages</RootNamespace>
     <AssemblyName>AccumulateMessages</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -69,7 +69,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Module1.vb" />
+    <Compile Include="AccumulateMessages.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
