@@ -31,6 +31,7 @@ Module AccumulateMessages
                 MsgBox(UserMessages(newMessage, clearMessages, storage))
             ElseIf newMessage = "C" Then
                 Console.WriteLine("MESSAGES ERASED")
+                storage = UserMessages(newMessage, clearMessages, storage)
             Else
                 UserMessages(newMessage, clearMessages, storage)
                 storage = UserMessages(newMessage, clearMessages, storage)
